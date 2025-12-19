@@ -1,6 +1,39 @@
 #!/bin/bash
+
+# HI res wallpapers
+echo -e "\nRenaming LOW res PNG wallpapers\n"
 counter=0
-#for file in * # All files
-for file in *.png; do
-    [[ -f $file ]] && echo mv -i "$file" $((counter+1)).png && ((counter++))
+for file in assets/wallpapers-hires/*.png; do
+    [[ -f $file ]] && mv -fv "$file" "$(dirname "$file")/$(printf "%03d" $((counter+1))).png" && ((counter++))
+done
+echo -e "\nRenaming LOW res JPG wallpapers\n"
+counter=0
+for file in assets/wallpapers-hires/*.jpg; do
+    [[ -f $file ]] && mv -fv "$file" "$(dirname "$file")/$(printf "%03d" $((counter+1))).jpg" && ((counter++))
+done
+
+# LOW res wallpapers
+echo -e "\nRenaming LOW res wallpapers\n"
+counter=0
+for file in assets/wallpapers-lowres/*.png; do
+    [[ -f $file ]] && mv -fv "$file" "$(dirname "$file")/$(printf "%03d" $((counter+1))).png" && ((counter++))
+done
+
+# logos
+echo -e "\nRenaming logos\n"
+counter=0
+for file in assets/logos/*.png; do
+    [[ -f $file ]] && mv -fv "$file" "$(dirname "$file")/$(printf "%03d" $((counter+1))).png" && ((counter++))
+done
+echo -e "\nRenaming SVG logos\n"
+counter=0
+for file in assets/logos/*.svg; do
+    [[ -f $file ]] && mv -fv "$file" "$(dirname "$file")/$(printf "%03d" $((counter+1))).svg" && ((counter++))
+done
+
+# grub themes
+echo -e "\nRenaming grub themes\n"
+counter=0
+for file in assets/grub/inkspace-files/*.svg; do
+    [[ -f $file ]] && mv -fv "$file" "$(dirname "$file")/$(printf "%03d" $((counter+1))).svg" && ((counter++))
 done
