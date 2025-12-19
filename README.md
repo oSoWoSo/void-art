@@ -19,7 +19,7 @@ Some Wallpapers from:
 - https://wallpaperaccess.com/abstract-linux
 - https://wallpaperaccess.com/void-linux
 
-And lot of others who posted artwork on void's reddit page....
+And lot of others who posted artwork on void's reddit page or elsewhere
 
 ## Contributing:
 
