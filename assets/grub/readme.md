@@ -1,16 +1,16 @@
-#void linux grub themes
+# void linux grub themes
 
-##Install instructions
-sudo mkdir /boot/grub/theme  
+## Install instructions
+`sudo mkdir /boot/grub/theme`  
 sudo mv /themes/{choosen theme} /boot/grub/theme  
 `sudo mv /themes/void5 /boot/grub/theme`  
-sudo nano /etc/default/grub  
+`sudo nano /etc/default/grub`  
 Add `GRUB_THEME="/boot/grub/theme/{choosen theme}/theme.txt"`  
 ```
 GRUB_THEME="/boot/grub/theme/void5/theme.txt"
 ```  
 - save & exit  
-sudo update-grub  
+`sudo update-grub`  
 - reboot
 
 ## Install with grub-customizer
