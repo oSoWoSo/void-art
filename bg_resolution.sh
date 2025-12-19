@@ -11,7 +11,7 @@
 # Examples:
 # File A.png: 1920x1080 ; File B.png: 1280x720
 # $ ./bg_resolution.sh
-# High Resolution/A.png; Low Resolution/B.png
+# wallpapers-hires/A.png; wallpapers-lowres/B.png
 # --------------------------------------------------------------
 #
 # Changelog:
@@ -39,19 +39,19 @@ for img in *{.png,.jpg}; do
   IMG_RES_H=$(identify -format '%h' ${img})
   popd
   if [ ${IMG_RES_W} -ge 1920 ]; then
-    if [ -d 'High Resolution/' ]; then
-      mv walls/${img} 'High Resolution/'
+    if [ -d 'wallpapers-hires/' ]; then
+      mv walls/${img} 'wallpapers-hires/'
     else
-      mkdir 'High Resolution'
-      mv walls/${img} 'High Resolution/'
+      mkdir 'wallpapers-hires'
+      mv walls/${img} 'wallpapers-hires/'
     fi
     pushd "walls/"
   else
-    if [ -d 'Low Resolution/' ]; then
-      mv walls/${img} 'Low Resolution/'
+    if [ -d 'wallpapers-lowres/' ]; then
+      mv walls/${img} 'wallpapers-lowres/'
     else
-      mkdir 'Low Resolution'
-      mv walls/${img} 'Low Resolution/'
+      mkdir 'wallpapers-lowres'
+      mv walls/${img} 'wallpapers-lowres/'
     fi
     pushd "walls/"
   fi
