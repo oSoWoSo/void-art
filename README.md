@@ -14,6 +14,7 @@ for Gnu/Void linux
 - https://github.com/Mangeshrex
 - https://alkusin.net/
 - https://www.pixiv.net/en/users/60562229 (raviolimavioli008)
+- https://gitlab.com/Irkiosan
 - https://github.com/gabriel-russo  
 Some Wallpapers from:
 - https://wallpaperaccess.com/abstract-linux
