@@ -32,4 +32,4 @@ And lot of others who posted artwork on void's reddit page or elsewhere
 
 ### Pull Request
  - Please, put author credits here in README
- - Only accepted: Void Linux, Source Linux, Tux and Dark Green Nature/Universe 
+ - Only accepted: Void Linux, Source Linux, Tux and Dark Green Nature/Universe
