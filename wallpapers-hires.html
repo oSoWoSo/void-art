@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="High resolution wallpapers for Void Linux">
+    <title>Hi-Res Wallpapers - Void Linux Artwork</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>Void Artwork</h1>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="wallpapers-hires.html" class="active">Hi-Res Wallpapers</a></li>
+                <li><a href="wallpapers-lowres.html">Low-Res Wallpapers</a></li>
+                <li><a href="logos.html">Logos</a></li>
+                <li><a href="grub-themes.html">Grub Themes</a></li>
+                <li>
+                    <button class="theme-toggle" aria-label="Toggle theme">
+                        <span class="icon light-icon active">☀️</span>
+                        <span class="icon dark-icon">🌙</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h2>High Resolution Wallpapers</h2>
+            <p>Premium quality wallpapers for your desktop</p>
+            <div class="gallery-count">
+                <span class="count-badge">109 wallpapers</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Gallery -->
+    <main class="container">
+        <div class="gallery" id="gallery">
+            <!-- Images will be loaded here by JavaScript -->
+        </div>
+    </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <button class="lightbox-prev" aria-label="Previous">‹</button>
+        <button class="lightbox-next" aria-label="Next">›</button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightbox-img">
+            <div class="lightbox-info">
+                <span id="lightbox-counter"></span>
+                <a id="lightbox-download" href="" download class="btn btn-small">Download</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Void Linux Artwork Collection | Licensed under <a href="https://github.com/oSoWoSo/void-artwork/blob/main/LICENSE" target="_blank">CC-BY-4.0</a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
+    <script>
+        // Initialize gallery with hi-res wallpapers
+        initGallery('assets/wallpapers-hires/', [
+            { count: 105, ext: 'png' },
+            { count: 4, ext: 'jpg', startFrom: 106 }
+        ]);
+    </script>
+</body>
+</html>

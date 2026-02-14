@@ -1,47 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title></title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="dist/css/style.css" rel="stylesheet" />
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Collection of Void Linux artwork - wallpapers, logos, and grub themes">
+    <title>Void Linux Artwork Collection</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>Void Artwork</h1>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="wallpapers-hires.html">Hi-Res Wallpapers</a></li>
+                <li><a href="wallpapers-lowres.html">Low-Res Wallpapers</a></li>
+                <li><a href="logos.html">Logos</a></li>
+                <li><a href="grub-themes.html">Grub Themes</a></li>
+                <li>
+                    <button class="theme-toggle" aria-label="Toggle theme">
+                        <span class="icon light-icon active">☀️</span>
+                        <span class="icon dark-icon">🌙</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-  <body>
-    <div class="heading">
-      <h1>HI res Wallpapers</h1>
-    </div>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h2>Void Linux Artwork Collection</h2>
+            <p>A curated collection of wallpapers, logos, and grub themes for Void Linux enthusiasts</p>
+            <div class="hero-buttons">
+                <a href="wallpapers-hires.html" class="btn btn-primary">Browse Wallpapers</a>
+                <a href="https://github.com/oSoWoSo/void-artwork" class="btn btn-secondary" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+    </header>
 
-    <div class="hiDiv">
-      <!-- HI res wallpapers will be added in this div (js) -->
-    </div>
+    <!-- Categories -->
+    <main class="container">
+        <section class="categories">
+            <div class="category-card">
+                <div class="category-icon">🖼️</div>
+                <h3>Hi-Res Wallpapers</h3>
+                <p>High resolution wallpapers for your desktop</p>
+                <div class="category-count" data-path="assets/wallpapers-hires/" data-counts='[{"count":105,"ext":"png"},{"count":4,"ext":"jpg","startFrom":106}]'>
+                    <span class="count-number">109</span> images
+                </div>
+                <a href="wallpapers-hires.html" class="category-link">View Collection →</a>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-icon">🎨</div>
+                <h3>Low-Res Wallpapers</h3>
+                <p>Optimized wallpapers for lower resolution displays</p>
+                <div class="category-count" data-path="assets/wallpapers-lowres/" data-counts='[{"count":22,"ext":"png"}]'>
+                    <span class="count-number">22</span> images
+                </div>
+                <a href="wallpapers-lowres.html" class="category-link">View Collection →</a>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-icon">⚡</div>
+                <h3>Logos</h3>
+                <p>Official and community Void Linux logos</p>
+                <div class="category-count" data-path="assets/logos/" data-counts='[{"count":23,"ext":"png"},{"count":2,"ext":"svg","startFrom":24}]'>
+                    <span class="count-number">25</span> logos
+                </div>
+                <a href="logos.html" class="category-link">View Collection →</a>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-icon">💻</div>
+                <h3>Grub Themes</h3>
+                <p>Custom boot themes for GRUB bootloader</p>
+                <div class="category-count" data-path="assets/grub/themes/" data-counts='[{"count":7,"type":"folders"}]'>
+                    <span class="count-number">7</span> themes
+                </div>
+                <a href="grub-themes.html" class="category-link">View Collection →</a>
+            </div>
+        </section>
 
-    <div class="heading">
-      <h1>LOW res Wallpapers</h1>
-    </div>
+        <!-- About Section -->
+        <section class="about">
+            <h2>About This Collection</h2>
+            <p>This repository contains a curated collection of artwork for Void Linux, including wallpapers, logos, and grub themes created by talented community members.</p>
+            
+            <h3>Credits</h3>
+            <ul class="credits-list">
+                <li><a href="https://github.com/siduck76" target="_blank">siduck76</a></li>
+                <li><a href="https://github.com/mahmoudk1000" target="_blank">mahmoudk1000</a> (Dieggho on deviantart)</li>
+                <li><a href="https://github.com/Mangeshrex" target="_blank">Mangeshrex</a></li>
+                <li><a href="https://alkusin.net/" target="_blank">alkusin.net</a></li>
+                <li><a href="https://www.pixiv.net/en/users/60562229" target="_blank">raviolimavioli008</a></li>
+                <li><a href="https://gitlab.com/Irkiosan" target="_blank">Irkiosan</a></li>
+                <li><a href="https://github.com/gabriel-russo" target="_blank">gabriel-russo</a></li>
+            </ul>
+            
+            <h3>Contributing</h3>
+            <p>We welcome contributions! Please check our <a href="https://github.com/oSoWoSo/void-artwork" target="_blank">GitHub repository</a> for contribution guidelines.</p>
+        </section>
+    </main>
 
-    <div class="lowDiv">
-      <!-- LOW res wallpapers will be added in this div (js) -->
-    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Void Linux Artwork Collection | Licensed under <a href="https://github.com/oSoWoSo/void-artwork/blob/main/LICENSE" target="_blank">CC-BY-4.0</a></p>
+        </div>
+    </footer>
 
-    <div class="heading">
-      <h1>Logos</h1>
-    </div>
-
-    <div class="logoDiv">
-      <!-- all logos will be added in this div (js) -->
-    </div>
-
-    <div class="heading">
-      <h1>Grub themes</h1>
-    </div>
-
-    <div class="grubDiv">
-      <!-- all grub themes will be added in this div (js) -->
-    </div>
-
-    <script src="src/index.js"></script>
-
-    <div class="credits"></div>
-  </body>
+    <script src="js/main.js"></script>
+</body>
 </html>
