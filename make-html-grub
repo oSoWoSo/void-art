@@ -42,21 +42,21 @@ navbar=$(cat << 'EOF'
             display: flex;
             flex-direction: column;
         }
-        
+
         [data-theme="dark"] .theme-card {
             background: var(--bg-light);
             border-color: #87ff8755;
         }
-        
+
         .theme-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-lg);
         }
-        
+
         [data-theme="dark"] .theme-card:hover {
             box-shadow: 0 0 30px rgba(135, 255, 135, 0.3);
         }
-        
+
         .theme-preview {
             width: 100%;
             aspect-ratio: 16 / 9;
@@ -69,35 +69,35 @@ navbar=$(cat << 'EOF'
             justify-content: center;
             border: 1px solid var(--border-color);
         }
-        
+
         [data-theme="dark"] .theme-preview {
             background-color: #000;
             border-color: #87ff8755;
         }
-        
+
         .theme-preview img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
+
         .theme-info {
             flex: 1;
         }
-        
+
         .theme-name {
             font-size: 1.3rem;
             font-weight: 700;
             color: var(--text-color);
             margin-bottom: 10px;
         }
-        
+
         .theme-description {
             color: var(--text-light);
             margin-bottom: 15px;
             font-size: 0.9rem;
         }
-        
+
         .theme-meta {
             display: flex;
             gap: 15px;
@@ -106,19 +106,19 @@ navbar=$(cat << 'EOF'
             color: var(--text-light);
             flex-wrap: wrap;
         }
-        
+
         .theme-meta span {
             display: flex;
             align-items: center;
             gap: 5px;
         }
-        
+
         .theme-actions {
             display: flex;
             gap: 10px;
             margin-top: auto;
         }
-        
+
         .btn-download {
             flex: 1;
             background-color: var(--primary-color);
@@ -136,21 +136,21 @@ navbar=$(cat << 'EOF'
             justify-content: center;
             gap: 8px;
         }
-        
+
         .btn-download:hover {
             background-color: var(--primary-dark);
             transform: translateY(-2px);
         }
-        
+
         [data-theme="dark"] .btn-download {
             background-color: var(--color3);
             color: #000;
         }
-        
+
         [data-theme="dark"] .btn-download:hover {
             background-color: var(--color1);
         }
-        
+
         .btn-preview {
             padding: 10px 20px;
             background-color: var(--bg-light);
@@ -160,33 +160,33 @@ navbar=$(cat << 'EOF'
             transition: var(--transition);
             color: var(--text-color);
         }
-        
+
         .btn-preview:hover {
             background-color: var(--border-color);
         }
-        
+
         [data-theme="dark"] .btn-preview {
             background-color: #000;
             border-color: #87ff8755;
         }
-        
+
         [data-theme="dark"] .btn-preview:hover {
             background-color: #111;
         }
-        
+
         .themes-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 25px;
             margin-top: 30px;
         }
-        
+
         @media (max-width: 768px) {
             .themes-grid {
                 grid-template-columns: 1fr;
             }
         }
-        
+
         .install-instructions {
             background-color: var(--bg-light);
             padding: 30px;
@@ -194,21 +194,21 @@ navbar=$(cat << 'EOF'
             margin-top: 40px;
             border: 1px solid var(--border-color);
         }
-        
+
         [data-theme="dark"] .install-instructions {
             background-color: var(--bg-light);
             border-color: #87ff8755;
         }
-        
+
         .install-instructions h3 {
             color: var(--primary-color);
             margin-bottom: 15px;
         }
-        
+
         [data-theme="dark"] .install-instructions h3 {
             color: var(--color3);
         }
-        
+
         .install-instructions code {
             background-color: var(--bg-color);
             padding: 2px 6px;
@@ -216,12 +216,12 @@ navbar=$(cat << 'EOF'
             font-family: monospace;
             color: var(--text-color);
         }
-        
+
         [data-theme="dark"] .install-instructions code {
             background-color: #000;
             color: var(--color5);
         }
-        
+
         .install-instructions pre {
             background-color: var(--bg-color);
             padding: 15px;
@@ -230,7 +230,7 @@ navbar=$(cat << 'EOF'
             margin: 15px 0;
             border: 1px solid var(--border-color);
         }
-        
+
         [data-theme="dark"] .install-instructions pre {
             background-color: #000;
             border-color: #87ff8755;
@@ -291,12 +291,12 @@ grid=$(cat << 'EOF'
         <div class="themes-grid" id="themes-grid">
             <!-- Themes will be loaded here by JavaScript -->
         </div>
-        
+
         <!-- Installation Instructions -->
         <div class="install-instructions">
             <h3>📦 Installation Instructions</h3>
             <p>To install a GRUB theme on Void Linux:</p>
-            
+
             <ol style="margin-left: 20px; line-height: 1.8; color: var(--text-color);">
                 <li>Download the theme ZIP file and extract it</li>
                 <li>Copy the theme folder to <code>/boot/grub/themes/</code>:
@@ -311,7 +311,7 @@ sudo cp -r theme-folder-name /boot/grub/themes/</pre>
                 </li>
                 <li>Reboot to see your new theme!</li>
             </ol>
-            
+
             <p style="margin-top: 15px;"><strong>Note:</strong> Make sure the theme folder contains a <code>theme.txt</code> file.</p>
         </div>
     </main>
@@ -352,7 +352,7 @@ footer=$(cat << EOF
             {
                 name: 'void3',
                 title: 'Void Dark',
-                description: 'Minimalist Void Linux theme',
+                description: 'Dark Void LinuxGRUB theme',
                 preview: 'assets/grub/themes/void3/background.png',
                 folder: 'assets/grub/themes/void3',
                 files: '18 + 87 icon'
@@ -360,7 +360,7 @@ footer=$(cat << EOF
             {
                 name: 'void-linux',
                 title: 'Void Dark Logo',
-                description: 'Official Void Linux branding theme',
+                description: 'Dark Void Linux brandingGRUB theme',
                 preview: 'assets/grub/themes/void-linux/background.png',
                 folder: 'assets/grub/themes/void-linux',
                 files: '18 + 87 icon'
@@ -368,7 +368,7 @@ footer=$(cat << EOF
             {
                 name: 'void2',
                 title: 'Void Dark Logos',
-                description: 'Alternative dark theme for Void Linux',
+                description: 'Dark Void LinuxGRUB theme with logos',
                 preview: 'assets/grub/themes/void2/background.png',
                 folder: 'assets/grub/themes/void2',
                 files: '18 + 87 icon'
@@ -376,7 +376,7 @@ footer=$(cat << EOF
             {
                 name: 'void6',
                 title: 'Void Light',
-                description: 'Premium Void Linux theme',
+                description: 'Light Void LinuxGRUB theme',
                 preview: 'assets/grub/themes/void6/background.png',
                 folder: 'assets/grub/themes/void6',
                 files: '18 + 87 icon'
@@ -384,7 +384,7 @@ footer=$(cat << EOF
             {
                 name: 'void',
                 title: 'Void Light Logos',
-                description: 'Classic Void Linux GRUB theme with green accents',
+                description: 'Light Void LinuxGRUB theme with logos',
                 preview: 'assets/grub/themes/void/background.png',
                 folder: 'assets/grub/themes/void',
                 files: '18 + 87 icon'
@@ -392,7 +392,7 @@ footer=$(cat << EOF
             {
                 name: 'void4',
                 title: 'Void Green',
-                description: 'Modern take on Void Linux branding',
+                description: 'Green Void Linux brandingGRUB theme',
                 preview: 'assets/grub/themes/void4/background.png',
                 folder: 'assets/grub/themes/void4',
                 files: '18 + 87 icon'
@@ -400,7 +400,7 @@ footer=$(cat << EOF
             {
                 name: 'void5',
                 title: 'Void Green Penguin',
-                description: 'Dark theme with subtle animations',
+                description: 'Green VoidGRUB theme with penguin',
                 preview: 'assets/grub/themes/void5/background.png',
                 folder: 'assets/grub/themes/void5',
                 files: '18 + 87 icon'
@@ -413,11 +413,11 @@ cards=$(cat << 'EOF'
         // Generate theme cards
         function loadThemes() {
             const grid = document.getElementById('themes-grid');
-            
+
             grubThemes.forEach(theme => {
                 const card = document.createElement('div');
                 card.className = 'theme-card';
-                
+
                 card.innerHTML = `
                     <div class="theme-preview">
                         <img src="${theme.preview}" alt="${theme.title}" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\\'color: var(--text-light);\\'>Preview not available</span>'">
@@ -430,7 +430,9 @@ cards=$(cat << 'EOF'
                             <span>📦 ${theme.name}</span>
                         </div>
                         <div class="theme-actions">
-                            <a href="#" class="btn-download" onclick="downloadTheme('${theme.name}', '${theme.folder}'); return false;">
+                            <a href="https://GitFolderDownloader.github.io/?url=https://github.com/oSoWoSo/void-artwork/tree/main/${theme.folder}&return=https://osowoso.org/grub.html" 
+                               class="btn-download" 
+                               target="_blank">
                                 ⬇️ Download ZIP
                             </a>
                             <button class="btn-preview" onclick="previewTheme('${theme.preview}')">
@@ -439,20 +441,11 @@ cards=$(cat << 'EOF'
                         </div>
                     </div>
                 `;
-                
+
                 grid.appendChild(card);
             });
         }
-        
-        // Download theme (in real implementation, this would create a ZIP)
-        function downloadTheme(name, folder) {
-            // Note: In production, you would need a server-side script to create ZIP files
-            // For now, we'll just link to the GitHub folder
-            const githubUrl = `https://github.com/oSoWoSo/void-artwork/tree/main/${folder}`;
-            alert(`To download this theme:\n\n1. Visit: ${githubUrl}\n2. Click "Code" → "Download ZIP"\n3. Extract only the "${name}" folder\n\nOr clone the entire repository and navigate to ${folder}`);
-            window.open(githubUrl, '_blank');
-        }
-        
+
         // Preview theme
         function previewTheme(imagePath) {
             const img = new Image();
@@ -460,7 +453,7 @@ cards=$(cat << 'EOF'
             img.style.maxWidth = '90vw';
             img.style.maxHeight = '90vh';
             img.style.borderRadius = '10px';
-            
+
             const overlay = document.createElement('div');
             overlay.style.cssText = `
                 position: fixed;
@@ -475,12 +468,12 @@ cards=$(cat << 'EOF'
                 z-index: 9999;
                 cursor: pointer;
             `;
-            
+
             overlay.appendChild(img);
             overlay.onclick = () => overlay.remove();
             document.body.appendChild(overlay);
         }
-        
+
         // Load themes on page load
         document.addEventListener('DOMContentLoaded', loadThemes);
     </script>
