@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#shellcheck disable=SC2089
+#
+# Make void-artwork website
+#
+# Author: zenobit <zen@duck.com>
+# Date: February 14, 2026
+# License: MIT
+#
+
+_g "Creating void-artwork website"
+./make-html-index-start
+./make-html-grub
+./make-html-hires
+./make-html-lowres
+./make-html-logos
+./make-html-index-rest
+
+_g "Finished"

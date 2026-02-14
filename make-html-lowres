@@ -1,10 +1,27 @@
+#!/usr/bin/env bash
+#shellcheck disable=SC2089
+#
+# Make lowres.html file
+#
+# Author: zenobit <zen@duck.com>
+# Date: February 14, 2026
+# License: MIT
+#
+
+_g "Creating lowres.html"
+file=lowres
+title="Low-Res Wallpapers - Void Linux Artwork"
+lowresCount=$(find "assets/$file/" -type f -name "*.png" | wc -l)
+export lowresCount
+
+navbar=$(cat << EOF
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Void Linux logos collection">
-    <title>Logos - Void Linux Artwork</title>
+    <meta name="viewport"="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Low resolution wallpapers for Void Linux">
+    <title>${title}</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -23,8 +40,8 @@
                 <li><a href="https://osowoso.org">oSoWoSo</a></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="hires.html">Hi-Res Wallpapers</a></li>
-                <li><a href="lowres.html">Low-Res Wallpapers</a></li>
-                <li><a href="logos.html" class="active">Logos</a></li>
+                <li><a href="lowres.html" class="active">Low-Res Wallpapers</a></li>
+                <li><a href="logos.html">Logos</a></li>
                 <li><a href="grub.html">Grub Themes</a></li>
                 <li>
                     <button class="theme-toggle" aria-label="Toggle theme">
@@ -35,23 +52,31 @@
             </ul>
         </div>
     </nav>
+EOF
+)
+
+header=$(cat << EOF
     <!-- Page Header -->
     <header class="page-header">
         <div class="logo-container">
             <img src="assets/logos/001.png" alt="Void Logo" class="logo">
         </div>
         <div class="container">
-            <h2>Void Linux Logos</h2>
-            <p>Official and community logos in various formats</p>
+            <h2>Low Resolution Wallpapers</h2>
+            <p>Optimized wallpapers for lower resolution displays and faster loading</p>
             <div class="gallery-count">
                 <!-- // Change numbers if you add -->
-                <span class="count-badge">40 logos</span>
+                <span class="count-badge">${lowresCount} wallpapers</span>
             </div>
         </div>
     </header>
+EOF
+)
+
+gallery=$(cat << 'EOF'
     <!-- Gallery -->
     <main class="container">
-        <div class="gallery logo-gallery" id="gallery">
+        <div class="gallery" id="gallery">
             <!-- Images will be loaded here by JavaScript -->
         </div>
     </main>
@@ -69,7 +94,10 @@
             </div>
         </div>
     </div>
-        <!-- About Section -->
+EOF
+)
+
+about='        <!-- About Section -->
         <section class="about">
             <h2>About This Collection</h2>
             <p>This repository contains a curated collection of artwork for Void Linux, including wallpapers, logos, and grub themes created by talented community members.</p>
@@ -89,8 +117,9 @@
             <p>We welcome contributions! Please check our <a href="https://github.com/oSoWoSo/void-artwork" target="_blank">GitHub repository</a> for contribution guidelines.</p>
         </section>
     </main>
+'
 
-    <!-- Giscus -->
+giscus='    <!-- Giscus -->
 <script src="https://giscus.app/client.js"
         data-repo="osowoso/void-artwork"
         data-repo-id="R_kgDOGLPAbA"
@@ -107,7 +136,9 @@
         crossorigin="anonymous"
         async>
 </script>
+'
 
+footer=$(cat << EOF
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -119,10 +150,34 @@
     <script src="js/gallery.js"></script>
     <script>
         // Change numbers if you add
-        initGallery('assets/logos/', [
-            { count: 29, ext: 'png' },
-            { count: 11, ext: 'svg', startFrom: 30 }
+        initGallery('assets/lowres/', [
+            { count: ${lowresCount}, ext: 'png' }
         ]);
     </script>
 </body>
 </html>
+EOF
+)
+
+cat << EOF> "${file}.html"
+${navbar}
+${header}
+${gallery}
+${about}
+${giscus}
+${footer}
+EOF
+
+categories=$(cat << EOF >> index.html
+            <div class="category-card">
+                <div class="category-icon">🎨</div>
+                <h3>Low-Res Wallpapers</h3>
+                <p>Optimized wallpapers for lower resolution displays</p>
+                <!-- Change this numbers if you add theme -->
+                <div class="category-count" data-path="assets/lowres/" data-counts='[{"count":${lowresCount},"ext":"png"}]'>
+                    <span class="count-number">${lowresCount}</span> images
+                </div>
+                <a href="lowres.html" class="category-link">View Collection →</a>
+            </div>
+EOF
+)
