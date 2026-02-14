@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+cat > /tmp/toggle.html << 'EOF'
+          <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+          <script>
+          function toggleTheme(){
+            const html=document.documentElement;
+            const current=html.getAttribute("data-theme")||"dark";
+            const next=current==="dark"?"light":"dark";
+            html.setAttribute("data-theme",next);
+            localStorage.setItem("theme",next)
+          }
+          (function(){
+            const saved=localStorage.getItem("theme")||"dark";
+            document.documentElement.setAttribute("data-theme",saved)
+          })();
+          </script>
+EOF
+
+mkdir -p _site
+for file in *.md; do
+    [ -f "$file" ] || continue
+        output="_site/${file%.md}.html"
+        echo "Processing: $file → $output"
+        if [ "$file" = README.md ]; then
+            pandoc "$file" -s --css=styles.css --include-after-body=/tmp/toggle.html -o _site/index.html
+        else
+            pandoc "$file" -s --css=styles.css --include-after-body=/tmp/toggle.html -o "$output"
+        fi
+done
