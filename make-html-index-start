@@ -1,0 +1,87 @@
+#!/usr/bin/env bash
+#shellcheck disable=SC2089
+#
+# Make start of index.html file
+#
+# Author: zenobit <zen@duck.com>
+# Date: February 14, 2026
+# License: MIT
+#
+
+_g "Creating start of index.html"
+file=index
+title="Void Linux Artwork Collection"
+
+fillTitle=$(cat << EOF
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Collection of Void Linux artwork - wallpapers, logos, and grub themes">
+    <title>${title}</title>
+EOF
+)
+
+navbar=$(cat << 'EOF'
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>Void Artwork</h1>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="https://osowoso.org/projects">oSoWoSo</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="hires.html">Hi-Res Wallpapers</a></li>
+                <li><a href="lowres.html">Low-Res Wallpapers</a></li>
+                <li><a href="logos.html">Logos</a></li>
+                <li><a href="grub.html">Grub Themes</a></li>
+                <li>
+                    <button class="theme-toggle" aria-label="Toggle theme">
+                        <span class="icon light-icon active">☀️</span>
+                        <span class="icon dark-icon">🌙</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+EOF
+)
+
+hero=$(cat << 'EOF'
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="logo-container">
+            <img src="assets/logos/001.png" alt="Void Logo" class="logo">
+        </div>
+        <div class="hero-content">
+            <h2>Void Linux Artwork Collection</h2>
+            <p>A curated collection of wallpapers, logos, and grub themes for Void Linux enthusiasts</p>
+            <div class="hero-buttons">
+                <a href="hires.html" class="btn btn-primary">Browse Wallpapers</a>
+                <a href="https://github.com/oSoWoSo/void-artwork" class="btn btn-secondary" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+    </header>
+EOF
+)
+
+categories='    <!-- Categories -->
+    <main class="container">
+        <section class="categories">'
+
+cat << EOF> "${file}.html"
+${fillTitle}
+${navbar}
+${hero}
+${categories}
+EOF

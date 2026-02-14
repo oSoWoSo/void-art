@@ -1,0 +1,75 @@
+#!/usr/bin/env bash
+#shellcheck disable=SC2089
+#
+# Make rest of index.html file
+#
+# Author: zenobit <zen@duck.com>
+# Date: February 14, 2026
+# License: MIT
+#
+
+_g "Creating rest of index.html"
+file=index
+title="Void Linux Artwork Collection"
+
+categories='        </section>'
+
+about='        <!-- About Section -->
+        <section class="about">
+            <h2>About This Collection</h2>
+            <p>This repository contains a curated collection of artwork for Void Linux, including wallpapers, logos, and grub themes created by talented community members.</p>
+            
+            <h3>Credits</h3>
+            <ul class="credits-list">
+                <li><a href="https://github.com/siduck76" target="_blank">siduck76</a></li>
+                <li><a href="https://github.com/mahmoudk1000" target="_blank">mahmoudk1000</a></li>
+                <li><a href="https://github.com/Mangeshrex" target="_blank">Mangeshrex</a></li>
+                <li><a href="https://alkusin.net/" target="_blank">alkusin.net</a></li>
+                <li><a href="https://www.pixiv.net/en/users/60562229" target="_blank">raviolimavioli008</a></li>
+                <li><a href="https://gitlab.com/Irkiosan" target="_blank">Irkiosan</a></li>
+                <li><a href="https://github.com/gabriel-russo" target="_blank">gabriel-russo</a></li>
+            </ul>
+            
+            <h3>Contributing</h3>
+            <p>We welcome contributions! Please check our <a href="https://github.com/oSoWoSo/void-artwork" target="_blank">GitHub repository</a> for contribution guidelines.</p>
+        </section>
+    </main>
+'
+
+giscus='    <!-- Giscus -->
+<script src="https://giscus.app/client.js"
+        data-repo="osowoso/void-artwork"
+        data-repo-id="R_kgDOGLPAbA"
+        data-category="General"
+        data-category-id="DIC_kwDOGLPAbM4CAHM_"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="noborder_dark"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+'
+
+footer='    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Void Linux Artwork Collection | Licensed under <a href="https://github.com/oSoWoSo/void-artwork/blob/main/LICENSE" target="_blank">CC-BY-4.0</a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+'
+
+cat << EOF >> "${file}.html"
+${categories}
+${about}
+${giscus}
+${footer}
+EOF

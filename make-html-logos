@@ -1,10 +1,30 @@
+#!/usr/bin/env bash
+#shellcheck disable=SC2089
+#
+# Make logos.html file
+#
+# Author: zenobit <zen@duck.com>
+# Date: February 14, 2026
+# License: MIT
+#
+
+_g "Creating logos.html"
+file=logos
+title="Logos - Void Linux Artwork"
+logosPNG=$(find "assets/$file/" -type f -name "*.png" | wc -l)
+logosSVG=$(find "assets/$file/" -type f -name "*.svg" | wc -l)
+logosSVGstart=$(( logosPNG + 1 ))
+logosCount=$(find "assets/$file/" -type f -name "*" | wc -l)
+export logosPNG logosSVG logosSVGstart logosCount
+
+navbar=$(cat << EOF
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Void Linux logos collection">
-    <title>Logos - Void Linux Artwork</title>
+    <title>${title}</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -35,6 +55,10 @@
             </ul>
         </div>
     </nav>
+EOF
+)
+
+header=$(cat << EOF
     <!-- Page Header -->
     <header class="page-header">
         <div class="logo-container">
@@ -45,10 +69,14 @@
             <p>Official and community logos in various formats</p>
             <div class="gallery-count">
                 <!-- // Change numbers if you add -->
-                <span class="count-badge">40 logos</span>
+                <span class="count-badge">${logosCount} logos</span>
             </div>
         </div>
     </header>
+EOF
+)
+
+gallery=$(cat << 'EOF'
     <!-- Gallery -->
     <main class="container">
         <div class="gallery logo-gallery" id="gallery">
@@ -69,7 +97,10 @@
             </div>
         </div>
     </div>
-        <!-- About Section -->
+EOF
+)
+
+about='        <!-- About Section -->
         <section class="about">
             <h2>About This Collection</h2>
             <p>This repository contains a curated collection of artwork for Void Linux, including wallpapers, logos, and grub themes created by talented community members.</p>
@@ -89,8 +120,9 @@
             <p>We welcome contributions! Please check our <a href="https://github.com/oSoWoSo/void-artwork" target="_blank">GitHub repository</a> for contribution guidelines.</p>
         </section>
     </main>
+'
 
-    <!-- Giscus -->
+giscus='    <!-- Giscus -->
 <script src="https://giscus.app/client.js"
         data-repo="osowoso/void-artwork"
         data-repo-id="R_kgDOGLPAbA"
@@ -107,7 +139,9 @@
         crossorigin="anonymous"
         async>
 </script>
+'
 
+footer=$(cat << EOF
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -120,9 +154,34 @@
     <script>
         // Change numbers if you add
         initGallery('assets/logos/', [
-            { count: 29, ext: 'png' },
-            { count: 11, ext: 'svg', startFrom: 30 }
+            { count: ${logosPNG}, ext: 'png' },
+            { count: ${logosSVG}, ext: 'svg', startFrom: ${logosSVGstart} }
         ]);
     </script>
 </body>
 </html>
+EOF
+)
+
+cat << EOF> "${file}.html"
+${navbar}
+${header}
+${gallery}
+${about}
+${giscus}
+${footer}
+EOF
+
+categories=$(cat << EOF >> index.html
+            <div class="category-card">
+                <div class="category-icon">⚡</div>
+                <h3>Logos</h3>
+                <p>Official and community Void Linux logos</p>
+                <!-- Change this numbers if you add theme -->
+                <div class="category-count" data-path="assets/logos/" data-counts='[{"count":${logosPNG},"ext":"png"},{"count":${logosSVG},"ext":"svg","startFrom":${logosSVGstart}}]'>
+                    <span class="count-number">${logosCount}</span> logos
+                </div>
+                <a href="logos.html" class="category-link">View Collection →</a>
+            </div>
+EOF
+)

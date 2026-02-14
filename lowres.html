@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="High resolution wallpapers for Void Linux">
-    <title>Hi-Res Wallpapers - Void Linux Artwork</title>
+    <meta name="viewport"="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Low resolution wallpapers for Void Linux">
+    <title>Low-Res Wallpapers - Void Linux Artwork</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -22,10 +22,10 @@
             <ul class="nav-menu">
                 <li><a href="https://osowoso.org">oSoWoSo</a></li>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="wallpapers-hires.html" class="active">Hi-Res Wallpapers</a></li>
-                <li><a href="wallpapers-lowres.html">Low-Res Wallpapers</a></li>
+                <li><a href="hires.html">Hi-Res Wallpapers</a></li>
+                <li><a href="lowres.html" class="active">Low-Res Wallpapers</a></li>
                 <li><a href="logos.html">Logos</a></li>
-                <li><a href="grub-themes.html">Grub Themes</a></li>
+                <li><a href="grub.html">Grub Themes</a></li>
                 <li>
                     <button class="theme-toggle" aria-label="Toggle theme">
                         <span class="icon light-icon active">☀️</span>
@@ -35,21 +35,20 @@
             </ul>
         </div>
     </nav>
-
     <!-- Page Header -->
     <header class="page-header">
         <div class="logo-container">
             <img src="assets/logos/001.png" alt="Void Logo" class="logo">
         </div>
         <div class="container">
-            <h2>High Resolution Wallpapers</h2>
-            <p>Premium quality wallpapers for your desktop</p>
+            <h2>Low Resolution Wallpapers</h2>
+            <p>Optimized wallpapers for lower resolution displays and faster loading</p>
             <div class="gallery-count">
-                <span class="count-badge">109 wallpapers</span>
+                <!-- // Change numbers if you add -->
+                <span class="count-badge">20 wallpapers</span>
             </div>
         </div>
     </header>
-
     <!-- Gallery -->
     <main class="container">
         <div class="gallery" id="gallery">
@@ -70,6 +69,26 @@
             </div>
         </div>
     </div>
+        <!-- About Section -->
+        <section class="about">
+            <h2>About This Collection</h2>
+            <p>This repository contains a curated collection of artwork for Void Linux, including wallpapers, logos, and grub themes created by talented community members.</p>
+            
+            <h3>Credits</h3>
+            <ul class="credits-list">
+                <li><a href="https://github.com/siduck76" target="_blank">siduck76</a></li>
+                <li><a href="https://github.com/mahmoudk1000" target="_blank">mahmoudk1000</a></li>
+                <li><a href="https://github.com/Mangeshrex" target="_blank">Mangeshrex</a></li>
+                <li><a href="https://alkusin.net/" target="_blank">alkusin.net</a></li>
+                <li><a href="https://www.pixiv.net/en/users/60562229" target="_blank">raviolimavioli008</a></li>
+                <li><a href="https://gitlab.com/Irkiosan" target="_blank">Irkiosan</a></li>
+                <li><a href="https://github.com/gabriel-russo" target="_blank">gabriel-russo</a></li>
+            </ul>
+            
+            <h3>Contributing</h3>
+            <p>We welcome contributions! Please check our <a href="https://github.com/oSoWoSo/void-artwork" target="_blank">GitHub repository</a> for contribution guidelines.</p>
+        </section>
+    </main>
 
     <!-- Giscus -->
 <script src="https://giscus.app/client.js"
@@ -99,10 +118,9 @@
     <script src="js/main.js"></script>
     <script src="js/gallery.js"></script>
     <script>
-        // Change this numbers if you add theme
-        initGallery('assets/wallpapers-hires/', [
-            { count: 109, ext: 'png' },
-            { count: 4, ext: 'jpg', startFrom: 110 }
+        // Change numbers if you add
+        initGallery('assets/lowres/', [
+            { count: 20, ext: 'png' }
         ]);
     </script>
 </body>
