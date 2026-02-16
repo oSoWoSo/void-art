@@ -105,7 +105,7 @@ about='        <!-- About Section -->
         <section class="about">
             <h2>About This Collection</h2>
             <p>This repository contains a curated collection of artwork for Void Linux, including wallpapers, logos, and grub themes created by talented community members.</p>
-            
+
             <h3>Credits</h3>
             <ul class="credits-list">
                 <li><a href="https://github.com/siduck76" target="_blank">siduck76</a></li>
@@ -116,7 +116,7 @@ about='        <!-- About Section -->
                 <li><a href="https://gitlab.com/Irkiosan" target="_blank">Irkiosan</a></li>
                 <li><a href="https://github.com/gabriel-russo" target="_blank">gabriel-russo</a></li>
             </ul>
-            
+
             <h3>Contributing</h3>
             <p>We welcome contributions! Please check our <a href="https://github.com/oSoWoSo/void-artwork" target="_blank">GitHub repository</a> for contribution guidelines.</p>
         </section>
@@ -173,7 +173,7 @@ ${giscus}
 ${footer}
 EOF
 
-categories=$(cat << EOF >> index.html
+categories=$(cat << EOF
             <div class="category-card">
                 <div class="category-icon">🖼️</div>
                 <h3>Hi-Res Wallpapers</h3>
@@ -186,3 +186,5 @@ categories=$(cat << EOF >> index.html
             </div>
 EOF
 )
+
+echo "$categories" >> index.html
