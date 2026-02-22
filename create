@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-#shellcheck disable=SC2089
 #
 # Make void-artwork website
 #
@@ -8,7 +7,7 @@
 # License: MIT
 #
 
-_g "Creating void-artwork website"
+echo "Creating void-artwork website"
 ./make-html-index-start
 ./make-html-grub
 ./make-html-hires
@@ -16,4 +15,4 @@ _g "Creating void-artwork website"
 ./make-html-logos
 ./make-html-index-rest
 
-_g "Finished"
+echo "Finished"
