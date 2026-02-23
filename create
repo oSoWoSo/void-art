@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-#shellcheck disable=SC2089
 #
 # Make void-artwork website
 #
@@ -89,14 +88,14 @@ export -f _r _re _g _b _y
 
 # Target: build
 target_build() { ## Builds the site into _site folder
-_g "Creating void-artwork website"
-./make-html-index-start
-./make-html-grub
-./make-html-hires
-./make-html-lowres
-./make-html-logos
-./make-html-index-rest
-_g "Finished"
+  _g "Creating void-artwork website"
+  ./make-html-index-start
+  ./make-html-grub
+  ./make-html-hires
+  ./make-html-lowres
+  ./make-html-logos
+  ./make-html-index-rest
+  _g "Finished"
 }
 
 # Target: help

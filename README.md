@@ -1,12 +1,15 @@
 # void artwork
 This repo contains a collection of
-- wallpapers
+- Hi resolution wallpapers
+- Low resolution wallpapers
 - logos
 - grub themes
 
 for Gnu/Void linux
 
-**You can find all Backgrounds in `assets/`**
+**You can find everything in `assets/`**
+
+Or use [website](https://art.osowoso.org)
 
 ## Credits to:
 - https://github.com/siduck76 ( made some walls too :p)
