@@ -118,7 +118,7 @@ about='        <!-- About Section -->
             </ul>
 
             <h3>Contributing</h3>
-            <p>We welcome contributions! Please check our <a href="https://github.com/oSoWoSo/void-artwork" target="_blank">GitHub repository</a> for contribution guidelines.</p>
+            <p>We welcome contributions! Please check our <a href="https://github.com/oSoWoSo/void-art" target="_blank">GitHub repository</a> for contribution guidelines.</p>
         </section>
     </main>
 '
@@ -146,7 +146,7 @@ footer=$(cat << EOF
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Void Linux Artwork Collection | Licensed under <a href="https://github.com/oSoWoSo/void-artwork/blob/main/LICENSE" target="_blank">CC-BY-4.0</a></p>
+            <p>&copy; 2026 Void Linux Artwork Collection | Licensed under <a href="https://github.com/oSoWoSo/void-art/blob/main/LICENSE" target="_blank">CC-BY-4.0</a></p>
         </div>
     </footer>
 
