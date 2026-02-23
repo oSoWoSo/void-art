@@ -430,8 +430,8 @@ cards=$(cat << 'EOF'
                             <span>📦 ${theme.name}</span>
                         </div>
                         <div class="theme-actions">
-                            <a href="https://GitFolderDownloader.github.io/?url=https://github.com/oSoWoSo/void-artwork/tree/main/${theme.folder}&return=https://osowoso.org/grub.html" 
-                               class="btn-download" 
+                            <a href="https://GitFolderDownloader.github.io/?url=https://github.com/oSoWoSo/void-artwork/tree/main/${theme.folder}&return=https://osowoso.org/grub.html"
+                               class="btn-download"
                                target="_blank">
                                 ⬇️ Download ZIP
                             </a>
@@ -493,7 +493,7 @@ ${footer}
 ${cards}
 EOF
 
-categories=$(cat << EOF >> index.html
+categories=$(cat << EOF
             <div class="category-card">
                 <div class="category-icon">💻</div>
                 <h3>Grub Themes</h3>
@@ -506,3 +506,5 @@ categories=$(cat << EOF >> index.html
             </div>
 EOF
 )
+
+echo "$categories" >> index.html
