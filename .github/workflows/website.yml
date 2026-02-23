@@ -4,7 +4,7 @@ name: Re-create and Deploy Website
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["website"]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -35,6 +35,7 @@ jobs:
 
       - name: Recreate website
         run: |
+          chmod +x create
           ./create
 
       - name: Setup Pages
