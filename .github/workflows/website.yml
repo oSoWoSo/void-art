@@ -35,7 +35,7 @@ jobs:
 
       - name: Recreate website
         run: |
-          ./create
+          ./create build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
