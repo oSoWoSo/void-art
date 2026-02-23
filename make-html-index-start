@@ -68,7 +68,7 @@ hero=$(cat << 'EOF'
             <p>A curated collection of wallpapers, logos, and grub themes for Void Linux enthusiasts</p>
             <div class="hero-buttons">
                 <a href="hires.html" class="btn btn-primary">Browse Wallpapers</a>
-                <a href="https://github.com/oSoWoSo/void-artwork" class="btn btn-secondary" target="_blank">View on GitHub</a>
+                <a href="https://github.com/oSoWoSo/void-art" class="btn btn-secondary" target="_blank">View on GitHub</a>
             </div>
         </div>
     </header>
