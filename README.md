@@ -9,7 +9,7 @@ for Gnu/Void linux
 
 **You can find everything in `assets/`**
 
-Or use [website](https://art.osowoso.org)
+Or use [website](https://wall.osowoso.org)
 
 ## Credits to:
 - https://github.com/siduck76 ( made some walls too :p)
